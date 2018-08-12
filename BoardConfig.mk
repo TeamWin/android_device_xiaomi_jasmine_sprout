@@ -63,7 +63,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # TWRP Configuration
-AB_OTA_UPDATER := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 100
@@ -78,6 +77,7 @@ RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2025-12-31

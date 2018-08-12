@@ -76,12 +76,18 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-AB_OTA_UPDATER := true 
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2025-12-31
+
+# A/B partition device flags
+TARGET_NO_KERNEL := false
+#TARGET_NO_RECOVERY := true
+#BOARD_USES_RECOVERY_AS_BOOT := true
+#BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+AB_OTA_UPDATER := true
 
 # Official
 PB_OFFICIAL := true

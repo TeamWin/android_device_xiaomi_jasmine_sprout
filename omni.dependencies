@@ -1,0 +1,8 @@
+[
+  {
+    "remote":"github",
+    "repository": "PitchBlackRecoveryProject/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision":"android-8.0"
+  }
+]

@@ -65,6 +65,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
+
 TW_MAX_BRIGHTNESS := 200
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_EXTRA_LANGUAGES := true
@@ -72,7 +73,7 @@ TW_NO_SCREEN_BLANK := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-RECOVERY_SDCARD_ON_DATA := false
+RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so

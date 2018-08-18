@@ -120,6 +120,10 @@ on property:crypto.ready=1
     start servicemanager
     
 # add by Manish4586 D2W Support 
-    chown system system /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture 
-    chmod 0644 /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture
-    write /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture 1
+#    chown system system /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture 
+#    chmod 0644 /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture
+#    write /sys/devices/soc/c175000.i2c/i2c-1/1-0020/input/input2/wake_gesture 1
+
+on init
+    write /sys/class/backlight/panel0-backlight/brightness 200
+    

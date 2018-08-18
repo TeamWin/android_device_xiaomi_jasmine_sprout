@@ -50,41 +50,4 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2
 PRODUCT_MANUFACTURER := Xiaomi
 
-# product specific
-# PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-        ro.secure=1 \
-        ro.adb.secure=0 \
-        ro.allow.mock.location=0
-        
-# A/B updater
-# AB_OTA_UPDATER := true
 
-# AB_OTA_PARTITIONS += \
-    boot \
-    system
-
-# AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-# PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-# The following modules are included in debuggable builds only.
-# PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
-
-# Boot control HAL
-# PRODUCT_PACKAGES += \
-    bootctrl.sdm660
-
-# PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.sdm660 \
-    libgptutils \
-    libz

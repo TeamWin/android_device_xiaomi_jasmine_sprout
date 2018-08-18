@@ -12,8 +12,10 @@
 /data            ext4              /dev/block/bootdevice/by-name/userdata   
 /misc            emmc              /dev/block/bootdevice/by-name/misc
 /persist         emmc              /dev/block/bootdevice/by-name/persist    flags=display="Persist";backup=1;flashimg=1
+/splash          emmc              /dev/block/bootdevice/by-name/splash     flags=display="Boot Logo";backup=1;flashimg=1
+
 /bt_firmware     vfat              /dev/block/bootdevice/by-name/bluetooth  flags=display="Bluetooth";backup=1;slotselect
-/modem		 emmc              /dev/block/bootdevice/by-name/modem      flags=slotselect;display="Modem";backup=1;flashimg=1
+/modem		       emmc              /dev/block/bootdevice/by-name/modem      flags=slotselect;display="Modem";backup=1;flashimg=1
 /firmware        vfat              /dev/block/bootdevice/by-name/modem      flags=display="Firmware";slotselect;backup=1;mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0
 /efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
 /efs2            emmc              /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1

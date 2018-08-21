@@ -90,3 +90,12 @@ PB_OFFICIAL := true
 
 # Enable CPU Temperature
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
+
+# Add Some Qcom Flags
+BOARD_USES_QCOM_HARDWARE := true
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true

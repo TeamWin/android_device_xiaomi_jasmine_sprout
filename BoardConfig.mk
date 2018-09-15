@@ -33,7 +33,7 @@ ENABLE_SCHEDBOOST := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
-BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
+#BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -79,11 +79,11 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot
 TW_SCREEN_BLANK_ON_BOOT := true
 
 # Security Patch Hack to prevent Anti Rollback
-PLATFORM_SECURITY_PATCH := 2025-12-31
+#PLATFORM_SECURITY_PATCH := 2025-12-31
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false
-TARGET_NO_RECOVERY := true
+#TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 

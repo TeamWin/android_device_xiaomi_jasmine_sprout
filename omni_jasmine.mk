@@ -43,11 +43,16 @@ PRODUCT_COPY_FILES += \
     $(TZDATAPATH)/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 endif
 
-## Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_jasmine
 PRODUCT_DEVICE := jasmine
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2
 PRODUCT_MANUFACTURER := Xiaomi
 
-
+# add support for future ota updates
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.secure=1 \
+    ro.adb.secure=0 \
+    ro.allow.mock.location=0
+    

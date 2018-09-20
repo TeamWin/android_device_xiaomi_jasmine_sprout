@@ -37,12 +37,6 @@ else ifneq ($(wildcard system/timezone),)
     TZDATAPATH := system/timezone/output_data/iana
 endif
 
-# Time Zone data for Recovery
-ifdef TZDATAPATH
-PRODUCT_COPY_FILES += \
-    $(TZDATAPATH)/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-endif
-
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_jasmine
 PRODUCT_DEVICE := jasmine

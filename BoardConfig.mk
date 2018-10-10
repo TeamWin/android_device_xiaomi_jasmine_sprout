@@ -78,13 +78,16 @@ TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 
+# MTP will not work until we update it to support ffs
+TW_EXCLUDE_MTP := true
+
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2025-12-31
 
 # A/B partition device flags
-#TARGET_NO_KERNEL := false
+TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
-BOARD_USES_RECOVERY_AS_BOOT := true
+#BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
 # Official

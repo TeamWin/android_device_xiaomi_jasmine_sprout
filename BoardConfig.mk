@@ -79,7 +79,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot
 TW_SCREEN_BLANK_ON_BOOT := true
 
 # MTP will not work until we update it to support ffs
-TW_EXCLUDE_MTP := true
+#TW_EXCLUDE_MTP := true
 
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2025-12-31

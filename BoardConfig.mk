@@ -82,7 +82,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 #TW_EXCLUDE_MTP := true
 
 # Security Patch Hack to prevent Anti Rollback
-PLATFORM_SECURITY_PATCH := 2025-12-31
+PLATFORM_SECURITY_PATCH := 2018-10-05
 
 # A/B partition device flags
 TARGET_NO_KERNEL := false

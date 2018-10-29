@@ -35,7 +35,7 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += skip_override androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE    := 4096
+BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb

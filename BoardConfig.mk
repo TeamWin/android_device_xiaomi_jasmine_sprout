@@ -83,6 +83,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2018-10-05
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false

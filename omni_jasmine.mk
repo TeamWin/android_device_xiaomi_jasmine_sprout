@@ -50,7 +50,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.allow.mock.location=0
     
-# Encryption
-PRODUCT_PACKAGES += \ 
-    libcryptfs_hw
-    

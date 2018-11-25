@@ -62,6 +62,12 @@ service hwservicemanager /sbin/hwservicemanager
     onrestart setprop hwservicemanager.ready false
     seclabel u:r:recovery:s0
 
+service boot-1-0 /sbin/android.hardware.boot@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 service servicemanager /sbin/servicemanager
     user root
     group root readproc
@@ -100,6 +106,7 @@ on boot
 
 on init
     start hwservicemanager
+    start boot-1-0
     start prepdecrypt
 
 on property:crypto.ready=0

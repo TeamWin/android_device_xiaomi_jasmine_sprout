@@ -1,4 +1,4 @@
-LOCAL_PATH := device/xiaomi/jasmine
+LOCAL_PATH := device/xiaomi/jasmine_sprout
 
 # Architecture
 TARGET_ARCH := arm64
@@ -71,7 +71,7 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+#TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 
 # MTP will not work until we update it to support ffs
@@ -83,10 +83,23 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TW_IGNORE_MISC_WIPE_DATA := true
 ALLOW_MISSING_DEPENDENCIES := true
 
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
+
+# Treble
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/treble
+
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_INCLUDE_CRYPTO := true
+
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false

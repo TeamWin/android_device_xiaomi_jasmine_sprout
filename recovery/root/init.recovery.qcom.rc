@@ -34,6 +34,13 @@ on fs
     chown system system /dev/ion
     install_keyring
 
+# Needed to make qseecomd work in recovery
+    chmod 0777 /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+
+    setprop crypto.ready 0
+
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     user root
@@ -41,11 +48,24 @@ service sbinqseecomd /sbin/qseecomd
     disabled
     seclabel u:r:recovery:s0
 
+service prepdecrypt /sbin/prepdecrypt.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
 service hwservicemanager /sbin/hwservicemanager
     user root
     group root
     disabled
     onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service boot-1-0 /sbin/android.hardware.boot@1.0-service
+    user root
+    group root
+    disabled
     seclabel u:r:recovery:s0
 
 service servicemanager /sbin/servicemanager
@@ -81,11 +101,13 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
     seclabel u:r:recovery:s0
 
 on boot
+    setprop sys.usb.config none
     setprop sys.usb.config adb
 
 on init
     start hwservicemanager
-    setprop crypto.ready 1
+    start boot-1-0
+    start prepdecrypt
 
 on property:crypto.ready=0
     stop sbinqseecomd
@@ -95,12 +117,10 @@ on property:crypto.ready=0
 
 on property:crypto.ready=1
     start sbinqseecomd
-
-on property:sys.listeners.registered=true
     start keymaster-3-0
     start gatekeeper-1-0
     start servicemanager
-
+	
 on init 
     write /sys/class/backlight/panel0-backlight/brightness 200
-
+	

@@ -11,7 +11,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a73
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
@@ -46,6 +46,7 @@ BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware persist
 BOARD_HAS_REMOVABLE_STORAGE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
@@ -73,12 +74,13 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
+TW_USE_TOOLBOX := true
 
 # MTP will not work until we update it to support ffs
 #TW_EXCLUDE_MTP := true
 
 # Security Patch Hack to prevent Anti Rollback
-PLATFORM_SECURITY_PATCH := 2018-10-05
+PLATFORM_SECURITY_PATCH := 2025-12-31
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_IGNORE_MISC_WIPE_DATA := true
 ALLOW_MISSING_DEPENDENCIES := true
@@ -95,11 +97,10 @@ RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/treble
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_INCLUDE_CRYPTO := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false

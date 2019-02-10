@@ -86,9 +86,10 @@ TW_IGNORE_MISC_WIPE_DATA := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := qcom/common/cryptfs_hw
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false

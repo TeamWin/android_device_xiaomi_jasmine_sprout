@@ -32,7 +32,7 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += skip_override androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE    := 2048
+BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
@@ -78,7 +78,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 #TW_EXCLUDE_MTP := true
 
 # Security Patch Hack to prevent Anti Rollback
-PLATFORM_SECURITY_PATCH := 2018-10-05
+PLATFORM_SECURITY_PATCH := 2019-01-05
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_IGNORE_MISC_WIPE_DATA := true
 ALLOW_MISSING_DEPENDENCIES := true

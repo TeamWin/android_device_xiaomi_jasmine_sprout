@@ -29,11 +29,15 @@
 
 #device         mount point      fstype        [device2] [length=]
 
-/dev/block/bootdevice/by-name/system       /               ext4    ro,barrier=1                                                    wait,slotselect,verify
-/dev/block/bootdevice/by-name/vendor       /vendor         ext4    ro,barrier=1                                                    wait,slotselect,verify
-/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check
+/dev/block/bootdevice/by-name/system       /               ext4    ro,barrier=1                                                    wait,avb
+/dev/block/bootdevice/by-name/vendor       /vendor         ext4    ro,barrier=1                                                    wait,avb
+/dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
+/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=footer
+/dev/block/mmcblk1p1                       /sdcard         vfat    nosuid,nodev                                                    wait
 /dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults
+/dev/block/bootdevice/by-name/recovery     /recovery       emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/cust         /cust           ext4    ro,nosuid,nodev,barrier=1                                       wait,check
 
 # USB-OTG                                                        
 /devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.*.auto*    /storage/usbotg    vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto

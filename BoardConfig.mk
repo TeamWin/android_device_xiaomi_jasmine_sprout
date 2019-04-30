@@ -11,7 +11,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := kryo
+TARGET_2ND_CPU_VARIANT := cortex-a73
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
@@ -59,7 +59,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 BOARD_HAS_NO_REAL_SDCARD := true
-TW_MAX_BRIGHTNESS := 255
+TW_MAX_BRIGHTNESS := 100
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_EXTRA_LANGUAGES := true
 TW_NO_SCREEN_BLANK := true
@@ -71,37 +71,21 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
-
-# MTP will not work until we update it to support ffs
-#TW_EXCLUDE_MTP := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_HAS_EDL_MODE := true
+TW_USE_TOOLBOX := true
 
 # Security Patch Hack to prevent Anti Rollback
-PLATFORM_SECURITY_PATCH := 2019-04-05
+PLATFORM_SECURITY_PATCH := 2019-05-05
 BOARD_SUPPRESS_SECURE_ERASE := true
-TW_IGNORE_MISC_WIPE_DATA := true
-ALLOW_MISSING_DEPENDENCIES := true
-
-# exFAT FS Support
-TW_INCLUDE_FUSE_EXFAT := true
-
-# NTFS Support
-TW_INCLUDE_FUSE_NTFS := true
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_INCLUDE_CRYPTO := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
 #BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
-
-# Official
-PB_OFFICIAL := true

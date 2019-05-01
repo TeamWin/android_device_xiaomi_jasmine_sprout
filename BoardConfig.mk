@@ -59,7 +59,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 BOARD_HAS_NO_REAL_SDCARD := true
-TW_MAX_BRIGHTNESS := 100
+TW_MAX_BRIGHTNESS := 225
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_EXTRA_LANGUAGES := true
 TW_NO_SCREEN_BLANK := true
@@ -71,7 +71,7 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT_DIR}/target/product/jasmine_sprout/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true

@@ -92,4 +92,4 @@ TW_INCLUDE_CRYPTO := false
 #BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
-include $(LOCAL_DIR)/gpt-utils/Android.mk
+include $(LOCAL_PATH)/gpt-utils/Android.mk

@@ -70,10 +70,8 @@ TW_INCLUDE_NTFS_3G := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0 bootctrl.sdm660 ligptutils
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT_DIR}/target/product/jasmine_sprout/system/lib64/android.hardware.boot@1.0.so
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += ${OUT_DIR}/target/product/jasmine_sprout/vendor/lib64/libgptutils.so
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += ${OUT_DIR}/target/product/jasmine_sprout/vendor/lib64/hw/bootctrl.sdm660.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
@@ -84,12 +82,10 @@ PLATFORM_SECURITY_PATCH := 2019-05-05
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Crypto
-TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO := true
 
 # A/B partition device flags
 #TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
 #BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
-
-include $(LOCAL_DIR)/gpt-utils/Android.mk

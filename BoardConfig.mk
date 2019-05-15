@@ -76,7 +76,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES += ${OUT_DIR}/target/product/jasmine_sprout/
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += ${OUT_DIR}/target/product/jasmine_sprout/vendor/lib64/hw/bootctrl.sdm660.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_HAS_EDL_MODE := true
+#TW_HAS_EDL_MODE := true
 TW_USE_TOOLBOX := true
 
 # Security Patch Hack to prevent Anti Rollback

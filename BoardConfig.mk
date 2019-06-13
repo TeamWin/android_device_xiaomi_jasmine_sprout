@@ -72,14 +72,13 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT_DIR}/target/product/jasmine_sprout/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_USE_TOOLBOX := true
 
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2019-06-05
-ALLOW_MISSING_DEPENDENCIES := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true

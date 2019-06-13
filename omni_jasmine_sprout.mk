@@ -30,7 +30,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_PACKAGES += \
     charger_res_images \
     charger
-	
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_PLATFORM := SDM660
 PRODUCT_NAME := omni_jasmine_sprout

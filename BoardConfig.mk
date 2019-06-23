@@ -91,6 +91,3 @@ TW_INCLUDE_CRYPTO_FBE := true
 #TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
-
-# Official
-PB_OFFICIAL := true

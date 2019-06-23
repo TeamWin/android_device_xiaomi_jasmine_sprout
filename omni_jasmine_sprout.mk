@@ -62,6 +62,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
     android.hardware.boot@1.0-service \
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2025-12-31
+
 # Device identifier. This must come after all inclusions
 PRODUCT_PLATFORM := SDM660
 PRODUCT_NAME := omni_jasmine_sprout

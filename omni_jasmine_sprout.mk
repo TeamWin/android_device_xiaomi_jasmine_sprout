@@ -36,11 +36,31 @@ AB_OTA_PARTITIONS += \
     system \
     vendor
 
+PRODUCT_PACKAGES += \
+    bootctrl.sdm660
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.sdm660 \
+    libgptutils \
+    libz \
+    libcutils
+
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
 
 # Device identifier. This must come after all inclusions
 PRODUCT_PLATFORM := SDM660
@@ -59,11 +79,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="jasmine_sprout" \
     PRODUCT_NAME="jasmine" \
-    PRIVATE_BUILD_DESC="jasmine-user 9 PKQ1.180904.001 V10.0.9.0.PDIMIXM release-keys"
+    PRIVATE_BUILD_DESC="jasmine-user 9 PKQ1.180904.001 V10.0.10.0.PDIMIXM release-keys"
 	
 TARGET_VENDOR_PRODUCT_NAME := jasmine
 
-BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.9.0.PDIMIXM:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.10.0.PDIMIXM:user/release-keys"
 
 # Maintainer Prop
 PRODUCT_BUILD_PROP_OVERRIDES += \

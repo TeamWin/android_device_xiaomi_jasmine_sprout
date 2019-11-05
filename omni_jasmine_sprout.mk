@@ -82,11 +82,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="jasmine_sprout" \
     PRODUCT_NAME="jasmine" \
-    PRIVATE_BUILD_DESC="jasmine-user 9 PKQ1.180904.001 V10.0.10.0.PDIMIXM release-keys"
+    PRIVATE_BUILD_DESC="jasmine-user 9 PKQ1.180904.001 V10.0.16.0.PDIMIXM release-keys"
 	
 TARGET_VENDOR_PRODUCT_NAME := jasmine
 
-BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.10.0.PDIMIXM:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.16.0.PDIMIXM:user/release-keys"
 
 # Maintainer Prop
 PRODUCT_BUILD_PROP_OVERRIDES += \

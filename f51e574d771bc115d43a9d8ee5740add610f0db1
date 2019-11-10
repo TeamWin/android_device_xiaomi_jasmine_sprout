@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9df8556f_9a9f4ac1",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 124
+      },
+      "writtenOn": "2019-11-10T14:05:26Z",
+      "side": 1,
+      "message": "Jasmine doesn\u0027t uses metadata",
+      "revId": "f51e574d771bc115d43a9d8ee5740add610f0db1",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    }
+  ]
+}

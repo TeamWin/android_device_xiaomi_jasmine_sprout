@@ -1,4 +1,3 @@
-
 <sfs_path>
     <gp_data_path> /data/vendor/tzstorage/ </gp_data_path>
     <gp_persist_path> /mnt/vendor/persist/data/ </gp_persist_path>

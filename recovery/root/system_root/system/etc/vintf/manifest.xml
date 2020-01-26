@@ -1,3 +1,8 @@
+<!--
+    Input:
+        manifest.xml
+        framework_manifest.xml
+-->
 <manifest version="1.0" type="framework">
     <hal format="hidl">
         <name>android.frameworks.displayservice</name>
@@ -30,44 +35,14 @@
         <fqname>@1.0::ISensorManager/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.graphics.composer</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IComposer</name>
-            <instance>vr</instance>
-        </interface>
-        <fqname>@2.1::IComposer/vr</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.health</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IHealth</name>
-            <instance>backup</instance>
-        </interface>
-        <fqname>@2.0::IHealth/backup</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>android.hidl.allocator</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAllocator</name>
-            <instance>ashmem</instance>
-        </interface>
-        <fqname>@1.0::IAllocator/ashmem</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hidl.manager</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>IServiceManager</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IServiceManager/default</fqname>
+        <fqname>@1.2::IServiceManager/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hidl.memory</name>
@@ -125,6 +100,16 @@
         <fqname>@1.0::IAtCmdFwd/AtCmdFwdService</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.sigma_miracast</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>Isigma_miracast</name>
+            <instance>sigmahal</instance>
+        </interface>
+        <fqname>@1.0::Isigma_miracast/sigmahal</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.wifi.keystore</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -135,9 +120,10 @@
         <fqname>@1.0::IKeystoreExt/default</fqname>
     </hal>
     <vendor-ndk>
-        <version>28</version>
+        <version>29</version>
     </vendor-ndk>
     <system-sdk>
         <version>28</version>
+        <version>29</version>
     </system-sdk>
 </manifest>

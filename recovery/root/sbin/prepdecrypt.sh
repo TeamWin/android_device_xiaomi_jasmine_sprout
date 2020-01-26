@@ -48,7 +48,7 @@ if [ ! -z "$is_fastboot_twrp" ]; then
 	finish
 fi
 
-if [ -f /s/system/build.prop ]; then
+if [ -f /s/system/system/build.prop ]; then
 	# TODO: It may be better to try to read these from the boot image than from /system
 	osver=$(grep -i 'ro.build.version.release' /s/system/build.prop  | cut -f2 -d'=')
 	patchlevel=$(grep -i 'ro.build.version.security_patch' /s/system/build.prop  | cut -f2 -d'=')

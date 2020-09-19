@@ -1,6 +1,9 @@
 <!--
     Input:
         compatibility_matrix.2.xml
+        matrix.xml
+        matrix.xml
+        matrix.xml
 -->
 <compatibility-matrix version="1.0" type="framework" level="2">
     <hal format="hidl" optional="false">
@@ -170,6 +173,10 @@
     <hal format="hidl" optional="true">
         <name>android.hardware.ir</name>
         <version>1.0</version>
+        <interface>
+            <name>IConsumerIr</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl" optional="false">
         <name>android.hardware.keymaster</name>
